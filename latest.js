@@ -1,0 +1,14 @@
+import navbar from "./components/navbar.js";
+import { getData, appendData } from "./scripts/showData.js";
+let navbar_container = document.getElementById("navbar_container");
+navbar_container.innerHTML = navbar();
+let max = 120;
+let min = 97;
+var number = Math.floor(Math.random() * (max - min) + min);
+let char = String.fromCharCode(number);
+let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${char}`;
+let parent = document.getElementById("latest_container");
+let x = await getData(url);
+appendData(x.meals, parent);
+// console.log(x);
+console.log(char);
