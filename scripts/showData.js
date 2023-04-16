@@ -10,7 +10,7 @@ let getData = async (url) => {
 };
 let appendData = (data, parent) => {
   parent.innerHTML = "";
-  data.forEach((el) => {
+  data?.forEach((el) => {
     let div = document.createElement("div");
     div.setAttribute("id", "card");
     div.addEventListener("click", ()=>{
@@ -40,7 +40,7 @@ let appendData = (data, parent) => {
 };
 let appendOneData = (data, parent) => {
   parent.innerHTML = "";
-  data.forEach((el) => {
+  data?.forEach((el) => {
     let upper_div = document.createElement("div");
     upper_div.setAttribute("id", "day_container");
     let div_left = document.createElement("div");
